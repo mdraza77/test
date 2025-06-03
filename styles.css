@@ -1,31 +1,52 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
 }
 
 .navbar {
-    margin-bottom: 0;
+    transition: background-color 0.5s ease;
+}
+
+.navbar:hover {
+    background-color: #f8f9fa;
 }
 
 .hero {
     padding: 100px 0;
-    background: url('https://via.placeholder.com/1500x500') no-repeat center center;
-    background-size: cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://via.placeholder.com/1920x1080') center/cover no-repeat;
+    color: white;
+    transition: transform 0.5s ease;
 }
 
-.hero h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
+.hero:hover {
+    transform: scale(1.05);
 }
 
-.hero p {
-    font-size: 1.5rem;
-    margin-bottom: 30px;
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-footer {
-    padding: 20px 0;
-    background-color: #f8f9fa;
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+    color: white;
+}
+
+section {
+    transition: opacity 0.5s ease;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
 }

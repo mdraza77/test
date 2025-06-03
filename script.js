@@ -1,10 +1,20 @@
-// Custom JavaScript can be added here
-// For example, you can add event listeners or other interactive elements
-
 document.addEventListener('DOMContentLoaded', function() {
-    // Example: Add a click event to the 'Shop Now' button
-    const shopNowButton = document.querySelector('.btn-light');
-    shopNowButton.addEventListener('click', function() {
-        alert('Shop Now button clicked!');
+    const sections = document.querySelectorAll('section');
+
+    const options = {
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, options);
+
+    sections.forEach(section => {
+        observer.observe(section);
     });
 });
